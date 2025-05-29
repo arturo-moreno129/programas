@@ -1,0 +1,53 @@
+-cambiar el repositorio remoto
+ git remote set-url origin https://github.com/OWNER/REPOSITORY.git
+-subir una nueva rama
+
+-indentar codigo en visual code 
+ Alt + shift + f
+
+
+-regresar a un commint anterior 
+ git reset --hard HEAD~1
+
+$ diff <(sort prueba.txt) <(sort prueba1.txt) ----> para buscar diferencias en un archivo.
+
+
+****para instalar en python
+py -m pip install --pluggin_a_instalar--
+py -m pip install xlwings
+py -m pip install requests
+py -m pip install flask
+py -m pip install mysql-connector-python
+py -m pip install pandas
+py -m pip install openpyxl
+
+
+
+
+*******************nota ejecutar como administrador el XAMPP******************
+
+*********Activar la extensión ZipArchive en PHP para el uso de librería PhpSpreadsheet ******************
+Paso 1: Abre el archivo de configuración de PHP, php.ini. Este archivo normalmente se encuentra en la carpeta de instalación de XAMPP (C:\xampp\php\php.ini).
+
+Paso 2: Busca la siguiente línea:
+;extension=zip
+Asegúrate de quitar el punto y coma al inicio de la línea, dejando esto:
+extension=zip
+
+verificar si el comando py es admnitible
+se creo un comando para mandar a log.txt los errores
+
+******para que XAMPP phpmyadmin no sea accesible desde navegador**********
+Buscamos:
+C:\xampp\apache\conf\extra\httpd-xampp.conf
+
+Alias /phpmyadmin "C:/xampp/phpMyAdmin/"
+    <Directory "C:/xampp/phpMyAdmin">
+        AllowOverride AuthConfig
+        #Require local->-COMENTAMOS ESTA LINEA-
+        ErrorDocument 403 /error/XAMPP_FORBIDDEN.html.var
+    </Directory>
+
+
+
+

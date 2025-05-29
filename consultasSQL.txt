@@ -1,0 +1,80 @@
+****************************************
+update bd_acrivera.evidencia
+	set url_mantenimiento = "MANTENIMIENTO1.pdf"
+WHERE id_evidencia = 52;
+update bd_acrivera.evidencia
+	set fecha = "17/07/2024"
+WHERE id_evidencia = 52;
+
+INSERT INTO bd_acrivera.evidencia VALUE(default,'JESUS RAIR CASTILLO LEZAMA','27/08/2024','PC-COMPLETA','RESGUARDO2.pdf',null,1,1);
+select * from bd_acrivera.evidencia where fecha = "15/10/2024";
+
+create table mantenimientos(
+	id_mantenimiento int not null auto_increment primary key,
+    usuario_final varchar(100) not null,
+    fecha varchar(20)not null,
+    dispositivo varchar(200) not null,
+    tipoMan varchar(250) not null,
+    estatus int not null,
+    correo varchar(250) not null,
+    id_usuario int not null,
+	FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario)
+);
+use bd_acrivera;
+drop table mantenimientos;
+SELECT * FROM  bd_acrivera.mantenimietos;
+insert into bd_acrivera.mantenimietos values(default,"Mant Prueba","2024-11-05","esto es una prueba de manteniento",1,1);
+update bd_acrivera.mantenimietos
+	set estatus = 0
+WHERE id_mantenimiento =5;
+
+delete from mantenimietos
+where id_mantenimiento >1;
+
+ALTER TABLE bd_acrivera.mantenimietos
+ADD id_evidencia int;
+/*
+enero 1
+febrero 2
+marzo 3
+abril 4
+mayo 5
+junio 6
+julio 7
+agosto 8
+septimbre 9
+octubre 10
+nombiembre 11
+diciembre 13
+*************************************************
+SELECT * FROM bd_acrivera.usuario;
+delete from bd_acrivera.usuario
+where id_usuario = 3;
+update bd_acrivera.usuario
+	set puesto = "SOPORTE_2"
+WHERE id_usuario = 1;
+************************************************
+SELECT * FROM  bd_acrivera.mantenimientos where usuario_final like 'SARA%';
+insert into bd_acrivera.mantenimientos values(default,"MAIRA SANCHEZ MORENO","2025-01-11","PC-COMPLETA",1,1,"correo@outlook.com",2);
+update bd_acrivera.mantenimietos
+	set estatus = 0
+WHERE id_mantenimiento =5;
+
+delete from bd_acrivera.mantenimientos where id_mantenimiento >=8;
+
+ALTER TABLE bd_acrivera.mantenimietos
+ADD id_evidencia int;
+select * from mantenimientos as m inner join usuario as u on m.id_usuario = u.id_usuario;
+*************************************************
+SELECT * FROM bd_acrivera.usuario;
+update bd_acrivera.usuario set 
+	nombre = "ABEL DE JESUS",
+    apellidoP = "MORA",
+    apellidoM = "FLORES"
+WHERE id_usuario =5;
+****************************************************
+SELECT * FROM bd_acrivera.evidencia;
+SELECT DISTINCT nombre FROM bd_acrivera.evidencia order by NOMBRE;
+UPDATE evidencia SET url_resguardo = "RESGUARDO1.pdf" WHERE ID_EVIDENCIA= 1;
+delete from evidencia where ID_EVIDENCIA >195;
+****************************************************

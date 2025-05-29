@@ -1,0 +1,45 @@
+Gracias por compartir tu código PHP. Ya veo el problema principal:
+
+🧠 El problema:
+Tu archivo exportDir.php espera datos JSON del body, pero tu fetch() le está enviando application/x-www-form-urlencoded. Entonces, esta línea:
+
+php
+Copiar
+Editar
+$datosJSON = file_get_contents("php://input");
+$datos = json_decode($datosJSON, true);
+está devolviendo null, porque el cuerpo no es JSON.
+
+✅ Solución rápida:
+Opción 1: Cambiar el fetch para que envíe JSON (más limpio)
+js
+Copiar
+Editar
+fetch('exportDir.php', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ action: 'exportarDirectorio' })
+})
+Y en PHP lo puedes leer así como ya tienes:
+
+php
+Copiar
+Editar
+$datosJSON = file_get_contents("php://input");
+$datos = json_decode($datosJSON, true);
+
+if ($datos['action'] === 'exportarDirectorio') {
+    exportarDirectorio($con);
+}
+Opción 2: O dejar application/x-www-form-urlencoded y cambiar cómo lo recibes en PHP:
+En lugar de usar php://input, solo haz:
+
+php
+Copiar
+Editar
+$action = $_POST['action'] ?? '';
+if ($action === 'exportarDirectorio') {
+    exportarDirectorio($con);
+}
