@@ -49,5 +49,9 @@ Alias /phpmyadmin "C:/xampp/phpMyAdmin/"
     </Directory>
 
 
+***************************************para correr mi servidor local y hacerlo publico*************************************
+ngrok http --domain=absolute-pegasus-plainly.ngrok-free.app 80
+
+
 
 
