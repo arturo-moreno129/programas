@@ -5,4 +5,5 @@ set hora=%datetime:~8,2%-%datetime:~10,2%-%datetime:~12,2%
 echo Fecha de hoy: %fecha%
 echo Hora actual: %hora%
 
-mysqldump -u root bd_acrivera > C:\respaldos_acrivera\bd_backup_%fecha%_%hora%.sql
+mysqldump -u root bd_acrivera > C:\respaldos_acrivera\bd_acrivera_backup_%fecha%_%hora%.sql
+mysqldump -u root bd_impresiones > C:\respaldos_acrivera\bd_impresiones_backup_%fecha%_%hora%.sql

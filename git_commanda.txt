@@ -12,7 +12,7 @@
 $ diff <(sort prueba.txt) <(sort prueba1.txt) ----> para buscar diferencias en un archivo.
 
 
-****para instalar en python
+****para instalar en Python para que funcione el proyecto
 py -m pip install --pluggin_a_instalar--
 py -m pip install xlwings
 py -m pip install requests
@@ -20,7 +20,7 @@ py -m pip install flask
 py -m pip install mysql-connector-python
 py -m pip install pandas
 py -m pip install openpyxl
-
+py -m pip install pymupdf
 
 
 

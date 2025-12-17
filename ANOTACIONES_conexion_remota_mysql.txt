@@ -1,0 +1,24 @@
+********************************************ANOTACIONES
+esto se hace en el host donde esta XAMPP
+
+mysql -u root
+
+SELECT host, user FROM mysql.user WHERE user='root';
+
+
+creamos el usuario y se agrega permisos Para cualquier host
+CREATE USER 'root'@'140.240.13.101' IDENTIFIED BY 'Benito290496$';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'140.240.13.101' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+O bien se puede hacer
+Para tu IP específica (ej. 140.240.13.50)
+CREATE USER 'root'@'140.240.13.50' IDENTIFIED BY 'tu_password';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'140.240.13.50' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+en el archivo C:\xampp\phpMyAdmin\config.inc
+cambia el método de autenticación a:
+$cfg['Servers'][$i]['auth_type'] = 'cookie';
+
+
